@@ -1,13 +1,17 @@
 function configureListeners() {
     let images = document.querySelectorAll('img')// select img elements  
+    //  for (var i = 0; i < images.length; i++) { 
+        images.addEventListener('mouseenter',
+        (event) => {
+            event.target.document.append = addOpacity
+        })
+        setTimeout(() => {
+            images.target.style = "";
+          }, 500);
 
-     for (var i = 0; i < images.length; i++) { 
-        document.addEventListener(onmouseover,(event) => {
-            
-        })       
         // iterate over images and add mouseover event listeners      
     } 
-}
+// }
 
 function addOpacity(event) {
     // add appropriate CSS class
@@ -81,11 +85,11 @@ function getProductInfo(paintColor) {
 
     function updatePrice(colorName, price)
     {       
-        let colorPrice = // select element with corresponding id
-        // display price
+        let colorPrice = document.getElementbyId('#color-price')
+        colorPrice.textContent = price
         
-        let color = // select element with corresponding id
-        //display color name
-    }
+        let color = document.getElementbyId('#color-name')
+        color.textContent = colorName
+        
     
 }
