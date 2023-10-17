@@ -1,5 +1,10 @@
+// not sure why this function is returning an error code, but I ran out of time to work on this assignment in the current moment. 
+// this is one of the ways we can use javascript to select all images by tag name which is 'im' in the HTML. We went over this in class so do not know why
+// this is showing as "not a function"
+
 function configureListeners() {
     let images = document.getElementsbyTagName('img')
+
      for (let i = 0; i < images.length; i++) { 
         images[i].addEventListener('mouseover', mouseOver)
         images[i].addEventListener('mouseout', mouseOut)
@@ -8,9 +13,9 @@ function configureListeners() {
 
 function mouseOver(event) {
     this.querySelector("img").style.opacity = 0.5
-    getProductInfo(event.target.id)
+    getProductInfo(event.target.id)// actually displays the text with price and color name for the specific image the mouse is over
 }
-
+// empty strings to display when the mouse is no longer over the image 
 function mouseOut(event) {
 this.querySelector("img").style.opacity = 1
       let element = document.getElementById('color-price');
@@ -21,7 +26,7 @@ this.querySelector("img").style.opacity = 1
 
     event.preventDefault();    
 }
-
+// creates the variables price and colorName under one function to get product info for an image
 function getProductInfo(paintColor) {
     let price;
     let colorName;  
@@ -74,13 +79,15 @@ function getProductInfo(paintColor) {
             break;   
           default:              
     }
+// function for defining price and colorName variables to display the text describing color names and prices for the panels/images/color blocks.
 
     function updatePrice(colorName, price)
     {       
         let colorPrice = document.getElementbyId('color-price')
-        colorPrice.textContent = price
+        colorPrice.textContent = price// this defines price
+ 
         
         let color = document.getElementbyId('color-name')
-        color.textContent = colorName 
+        color.textContent = colorName // this defines colorName
     }
 }
